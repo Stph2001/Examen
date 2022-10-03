@@ -1,0 +1,29 @@
+<h2>Lista T-users</h2>
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Uid</th>
+            <th>User</th>
+            <th>Email</th>
+            <th>Pass</th>
+            <th>Rol</th>
+            <th>FullName</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let t_user of t_users">
+            <td>{{t_user.uid}}</td>
+            <td>{{t_user.user}}</td>
+            <td>{{t_user.email}}</td>
+            <td>{{t_user.pass}}</td>
+            <td>{{t_user.rol}}</td>
+            <td>{{t_user.fullName}}</td>
+            <td>
+                <button (click)= "actualizarT_user(t_user.id)" class="btn btn-info">Editar</button>
+                <button (click)= "eliminarT_user(t_user.id)" class="btn btn-danger" style="margin-left : 10px;">Eliminar</button>
+                <button (click)= "verDetallesdelT_user(t_user.id)" class="btn btn-primary" style="margin-left : 10px;">Detalles</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
